@@ -1,0 +1,35 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String num = sc.nextLine();
+        String num2 = "";
+        int lim = 0;
+        int signo=0;
+        int i = num.length();
+        int limite = num.length();
+        if(num.substring(0, 1).equals("-"))
+        {
+            num=num.substring(1,limite);
+            signo=1;
+            limite--;
+            i--;
+        }
+        while (limite > lim) {
+            String aux = num.substring(i - 1, i);
+            lim++;
+            num = num.substring(0, i);
+            i--;
+            if (!aux.equals("0")) {
+                num2 = num2 + aux;
+            }
+        }
+        if(signo==1)
+        {
+            num2="-"+num2;
+        }
+        
+        int num22=Integer.parseInt(num2.trim());
+        System.out.println(num22);
+    }
+}

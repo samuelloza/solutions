@@ -1,0 +1,25 @@
+import java.util.Scanner;
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+			int con = 0;
+			int num = sc.nextInt();
+			int nu2 = num;
+			while (nu2 > 0) {
+				int n3 = nu2 % 10;
+				if ((n3 != 0) && (num % (n3)) == 0) {
+					con++;
+				}
+				nu2 = nu2 / 10;
+			}
+			if (con == 0) {
+				System.out.print("upset\n");
+			} else {
+				if (con == (int) Math.log10(num) + 1) {
+					System.out.print("happier \n");
+				} else {
+					System.out.print("happy\n");
+				}
+			}
+		}
+	}
